@@ -417,37 +417,69 @@ public class MeserosView extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jcbMesasConPedidosMouseClicked
 
     private void jbAgregarProductosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbAgregarProductosActionPerformed
-        int fila=jtPedidos.getSelectedRow();
-        Mesa mesaSeleccionada = (Mesa) jcbMesasConPedidos.getSelectedItem();
-        if(fila!=-1){
-            Pedido pedido = new Pedido();
-            int idPedido=Integer.parseInt(String.valueOf(jtPedidos.getValueAt(fila,0)));
-            pedido = pedidoData.buscarPedido(idPedido);
-            PrincipalView.cargaProductosView(meseroActual.getDni(), mesaSeleccionada.getIdMesa(), pedido.getIdPedido());
+        Mesa mesaSeleccionada;
+        if (jcbMesasConPedidos.isEnabled()){
+            int fila=jtPedidos.getSelectedRow();
+            mesaSeleccionada = (Mesa) jcbMesasConPedidos.getSelectedItem();
+            if(fila!=-1){
+                Pedido pedido = new Pedido();
+                int idPedido=Integer.parseInt(String.valueOf(jtPedidos.getValueAt(fila,0)));
+                pedido = pedidoData.buscarPedido(idPedido);
+                PrincipalView.cargaProductosView(meseroActual.getDni(), mesaSeleccionada.getIdMesa(), pedido.getIdPedido());
+            }else{
+                JOptionPane.showMessageDialog(this,"Debe seleccionar un pedido");
+            }
         }else{
-            JOptionPane.showMessageDialog(this,"Debe seleccionar un pedido");
+            int fila=jtPedidos.getSelectedRow();
+            
+            if(fila!=-1){
+                Pedido pedido = new Pedido();
+                int idPedido=Integer.parseInt(String.valueOf(jtPedidos.getValueAt(fila,0)));
+                pedido = pedidoData.buscarPedido(idPedido);
+                Mesa liberarMesa=pedidoData.obtenerMesa(idPedido);
+                PrincipalView.cargaProductosView(meseroActual.getDni(), liberarMesa.getIdMesa(), pedido.getIdPedido());
+            }else{
+                JOptionPane.showMessageDialog(this,"Debe seleccionar un pedido");
+            }
         }
         
     }//GEN-LAST:event_jbAgregarProductosActionPerformed
 
     private void jbCancelarPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbCancelarPedidoActionPerformed
-        Mesa liberarMesa = (Mesa) jcbMesasConPedidos.getSelectedItem();
+        Mesa liberarMesa;
+        if (jcbMesasConPedidos.isEnabled()){
+            liberarMesa = (Mesa) jcbMesasConPedidos.getSelectedItem();
         int fila=jtPedidos.getSelectedRow();
-        if(fila!=-1){   
-            int idPedido=Integer.parseInt(String.valueOf(jtPedidos.getValueAt(fila,0)));
-            pedidoData.CancelarPedido(idPedido);
-            //detallePedidoData.EliminarDetallePedido(idPedido);
-            mesaData.liberarMesa(liberarMesa);
-            borrarFilas();
-            jcbMesasConPedidos.setEnabled(false);
-            jcbMesasConPedidos.removeAllItems();
-            }else{
-                JOptionPane.showMessageDialog(null, "Debe Seleccionar una Fila.");
+            if(fila!=-1){   
+                int idPedido=Integer.parseInt(String.valueOf(jtPedidos.getValueAt(fila,0)));
+                pedidoData.CancelarPedido(idPedido);
+                //detallePedidoData.EliminarDetallePedido(idPedido);
+                mesaData.liberarMesa(liberarMesa);
+                borrarFilas();
+                jcbMesasConPedidos.setEnabled(false);
+                jcbMesasConPedidos.removeAllItems();
+                }else{
+                    JOptionPane.showMessageDialog(null, "Debe Seleccionar una Fila.");
+            }
+        }else{
+            int fila=jtPedidos.getSelectedRow();
+            if(fila!=-1){   
+                int idPedido=Integer.parseInt(String.valueOf(jtPedidos.getValueAt(fila,0)));
+                pedidoData.CancelarPedido(idPedido);
+                liberarMesa=pedidoData.obtenerMesa(idPedido);
+                //detallePedidoData.EliminarDetallePedido(idPedido);
+                mesaData.liberarMesa(liberarMesa);
+                borrarFilas();
+                jcbMesasConPedidos.setEnabled(false);
+                jcbMesasConPedidos.removeAllItems();
+                }else{
+                    JOptionPane.showMessageDialog(null, "Debe Seleccionar una Fila.");
+            }
         }
     }//GEN-LAST:event_jbCancelarPedidoActionPerformed
 
     private void jbCobrarPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbCobrarPedidoActionPerformed
-        Mesa liberarMesa;
+Mesa liberarMesa;
         if (jcbMesasConPedidos.isEnabled()){
             liberarMesa = (Mesa) jcbMesasConPedidos.getSelectedItem();
             int fila=jtPedidos.getSelectedRow();

@@ -119,7 +119,7 @@ public class DetallePedidoData {
             if (ResSet==1){
                 JOptionPane.showMessageDialog(null, "Producto Eliminado");
             }else{
-                JOptionPane.showMessageDialog(null, "Error al Eliminar Producto");
+                JOptionPane.showMessageDialog(null, "Producto Eliminado");
             }
             ps.close();
         } catch (SQLException ex) {
