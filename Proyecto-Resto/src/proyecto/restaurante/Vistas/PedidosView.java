@@ -204,6 +204,9 @@ public class PedidosView extends javax.swing.JInternalFrame {
         jLabel1.setText("Pedidos por mesa");
         jpPedidos.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
 
+        jbRendirCaja.setBackground(new java.awt.Color(153, 153, 0));
+        jbRendirCaja.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
+        jbRendirCaja.setForeground(new java.awt.Color(51, 51, 51));
         jbRendirCaja.setText("Rendir Caja");
         jbRendirCaja.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -212,6 +215,9 @@ public class PedidosView extends javax.swing.JInternalFrame {
         });
         jpPedidos.add(jbRendirCaja, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 320, -1, -1));
 
+        jbListarTodo.setBackground(new java.awt.Color(153, 153, 0));
+        jbListarTodo.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
+        jbListarTodo.setForeground(new java.awt.Color(51, 51, 51));
         jbListarTodo.setText("Listar pedidos");
         jbListarTodo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -309,7 +315,6 @@ public class PedidosView extends javax.swing.JInternalFrame {
         listaPedidosPorMesero = pedidoData.Pedidos(m, fecha);
         double importeCobradas=0;
         double importeCanceladas=0;
-        double importeTotal=0;
         if (listaPedidosPorMesero.isEmpty()){
             JOptionPane.showMessageDialog(null, "Actualmente no tiene ningun pedido");
         }else{
@@ -325,10 +330,14 @@ public class PedidosView extends javax.swing.JInternalFrame {
                 }
                 
             }
-            if (importeCanceladas==0){
+                if (importeCobradas ==0){
+                    JOptionPane.showMessageDialog(null,"No tiene ningun pedido para Rendir");
+                }
+                if (importeCanceladas == 0){
                     JOptionPane.showMessageDialog(null,"Felicidades por no tener Mesas Canceladas");
                     JOptionPane.showMessageDialog(null,"Debe rendir al Encargado un Total de: $"+importeCobradas);
-                }else{
+                }
+                if (importeCobradas >0){
                 JOptionPane.showMessageDialog(null,"Se cancelaron pedidos con un valor total a: $"+importeCanceladas);
                 JOptionPane.showMessageDialog(null,"Debe rendir al Encargado un Total de: $"+importeCobradas);
                 for (Pedido pedido: listaPedidosPorMesero){
