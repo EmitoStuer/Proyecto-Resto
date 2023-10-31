@@ -442,7 +442,6 @@ public class MeserosView extends javax.swing.JInternalFrame {
                 JOptionPane.showMessageDialog(this,"Debe seleccionar un pedido");
             }
         }
-        
     }//GEN-LAST:event_jbAgregarProductosActionPerformed
 
     private void jbCancelarPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbCancelarPedidoActionPerformed
@@ -479,7 +478,7 @@ public class MeserosView extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jbCancelarPedidoActionPerformed
 
     private void jbCobrarPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbCobrarPedidoActionPerformed
-Mesa liberarMesa;
+        Mesa liberarMesa;
         if (jcbMesasConPedidos.isEnabled()){
             liberarMesa = (Mesa) jcbMesasConPedidos.getSelectedItem();
             int fila=jtPedidos.getSelectedRow();
