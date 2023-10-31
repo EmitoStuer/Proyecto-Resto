@@ -378,18 +378,22 @@ public class CargaMesasView extends javax.swing.JInternalFrame {
             m=new Mesa();
             int idMesa=Integer.parseInt(String.valueOf(jtTablaListaMesa.getValueAt(fila,0)));
             m=mesaData.obtenerMesa(idMesa);
-            m.setActividad(false);
-            mesaData.modificarMesa(m);
-            borrarFila();
-            jrbMesasActivas.setEnabled(false);
-            jrbMesasInactivas.setEnabled(true);
-            CargarMesasInactivas();
-            jrbMesasActivas.setSelected(false);
-            jrbMesasInactivas.setSelected(true);
-            jrbMesasActivas.setEnabled(true);
-            jrbMesasInactivas.setEnabled(false);
-            jbDesactivar.setEnabled(false);
-            jbActivar.setEnabled(true);
+            if (Estado.LIBRE.equals(m.getEstado())){
+                m.setActividad(false);
+                mesaData.modificarMesa(m);
+                borrarFila();
+                jrbMesasActivas.setEnabled(false);
+                jrbMesasInactivas.setEnabled(true);
+                CargarMesasInactivas();
+                jrbMesasActivas.setSelected(false);
+                jrbMesasInactivas.setSelected(true);
+                jrbMesasActivas.setEnabled(true);
+                jrbMesasInactivas.setEnabled(false);
+                jbDesactivar.setEnabled(false);
+                jbActivar.setEnabled(true);
+            }else{
+                JOptionPane.showMessageDialog(this,"la mesa "+idMesa+" esta OCUPADA");
+            }
         }else{
             JOptionPane.showMessageDialog(this,"Debe seleccionar una mesa");
         }
