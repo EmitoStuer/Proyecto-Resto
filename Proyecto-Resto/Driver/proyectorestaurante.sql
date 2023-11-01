@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 31-10-2023 a las 19:46:16
+-- Tiempo de generación: 01-11-2023 a las 02:01:59
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -61,7 +61,27 @@ INSERT INTO `detallepedidos` (`idDetallePedido`, `idProducto`, `idPedido`, `Cant
 (158, 7, 114, 1),
 (159, 16, 115, 1),
 (160, 7, 116, 1),
-(161, 14, 116, 1);
+(161, 14, 116, 1),
+(162, 7, 117, 1),
+(163, 16, 117, 1),
+(169, 7, 118, 1),
+(170, 4, 119, 1),
+(171, 13, 119, 1),
+(173, 7, 119, 1),
+(174, 7, 120, 1),
+(175, 15, 120, 1),
+(176, 18, 121, 1),
+(177, 16, 121, 1),
+(178, 6, 121, 1),
+(179, 4, 122, 1),
+(180, 16, 122, 2),
+(181, 9, 122, 1),
+(182, 17, 123, 5),
+(183, 4, 123, 1),
+(184, 18, 124, 1),
+(185, 9, 124, 1),
+(186, 9, 125, 1),
+(187, 15, 125, 1);
 
 -- --------------------------------------------------------
 
@@ -81,7 +101,7 @@ CREATE TABLE `mesas` (
 --
 
 INSERT INTO `mesas` (`idMesa`, `Capacidad`, `Estado`, `Actividad`) VALUES
-(1, 5, 'OCUPADA', 1),
+(1, 5, 'LIBRE', 1),
 (2, 5, 'LIBRE', 1),
 (3, 10, 'LIBRE', 1),
 (4, 7, 'LIBRE', 1),
@@ -91,8 +111,9 @@ INSERT INTO `mesas` (`idMesa`, `Capacidad`, `Estado`, `Actividad`) VALUES
 (8, 8, 'LIBRE', 1),
 (9, 6, 'LIBRE', 1),
 (10, 6, 'LIBRE', 1),
-(11, 6, 'LIBRE', 1),
-(12, 4, 'LIBRE', 1);
+(11, 8, 'LIBRE', 1),
+(12, 6, 'LIBRE', 1),
+(13, 10, 'LIBRE', 1);
 
 -- --------------------------------------------------------
 
@@ -148,7 +169,7 @@ INSERT INTO `meseros` (`idMesero`, `Nombre`, `Apellido`, `DNI`, `Estado`, `Acces
 (33, 'Lucas', 'Rojas', 65348123, 1, 2, '1234'),
 (34, 'Coca', 'Sarli', 12312377, 1, 2, '1234'),
 (35, 'Mikel', 'Matienzo', 12376456, 1, 2, '1234'),
-(36, 'Marcela', 'Miracola', 45611123, 1, 1, '1234');
+(36, 'Marcela Fabiana', 'Miracola', 20332324, 1, 2, '1234');
 
 -- --------------------------------------------------------
 
@@ -207,11 +228,20 @@ INSERT INTO `pedidos` (`idPedido`, `idMesa`, `idMesero`, `FechaPedido`, `HoraPed
 (109, 4, 5, '2023-10-29', '19:30:49', 2000, 0, 'COBRADA'),
 (110, 7, 5, '2023-10-29', '19:31:54', 3000, 0, 'COBRADA'),
 (111, 1, 2, '2023-10-29', '23:42:16', 7300, 0, 'COBRADA'),
-(112, 1, 2, '2023-10-31', '00:25:21', 6300, 1, 'INICIADA'),
+(112, 1, 2, '2023-10-31', '00:25:21', 6300, 0, 'FACTURADA'),
 (113, 2, 5, '2023-10-31', '12:52:05', 3500, 0, 'FACTURADA'),
 (114, 3, 5, '2023-10-31', '13:09:47', 500, 0, 'CANCELADA'),
 (115, 4, 5, '2023-10-31', '13:14:57', 1500, 0, 'FACTURADA'),
-(116, 2, 5, '2023-10-31', '14:43:26', 2500, 0, 'FACTURADA');
+(116, 2, 5, '2023-10-31', '14:43:26', 2500, 0, 'FACTURADA'),
+(117, 2, 5, '2023-10-31', '16:00:32', 2000, 0, 'FACTURADA'),
+(118, 3, 5, '2023-10-31', '16:13:31', 500, 0, 'FACTURADA'),
+(119, 7, 8, '2023-10-31', '19:09:31', 3800, 0, 'CANCELADA'),
+(120, 9, 8, '2023-10-31', '19:11:12', 3000, 0, 'FACTURADA'),
+(121, 2, 36, '2023-10-31', '21:24:15', 3800, 0, 'FACTURADA'),
+(122, 5, 36, '2023-10-31', '21:25:16', 6300, 0, 'FACTURADA'),
+(123, 8, 36, '2023-10-31', '21:25:46', 4300, 0, 'FACTURADA'),
+(124, 2, 5, '2023-10-31', '21:42:39', 2800, 0, 'FACTURADA'),
+(125, 6, 5, '2023-10-31', '21:42:53', 4500, 0, 'CANCELADA');
 
 -- --------------------------------------------------------
 
@@ -239,7 +269,7 @@ INSERT INTO `productos` (`idProducto`, `Nombre`, `Cantidad`, `Categoria`, `Preci
 (4, 'Coca Cola 2.5Lt', 30, 'BEBIDA', 1300, 1),
 (5, 'Pizza Muzzarella', 100, 'ALIMENTO', 1500, 1),
 (6, 'Cerveza Heineken 1Lt', 24, 'BEBIDA', 1500, 1),
-(7, 'Agua Mineal 500Ml', 50, 'ALIMENTO', 500, 1),
+(7, 'Agua Mineral 500ml', 50, 'ALIMENTO', 500, 1),
 (8, 'Pizza Napolitana', 100, 'ALIMENTO', 2200, 1),
 (9, 'Cerveza Andes IPA 1Lt', 36, 'BEBIDA', 2000, 1),
 (10, 'Sorrentinos con salsa rosada', 100, 'ALIMENTO', 1800, 1),
@@ -248,7 +278,9 @@ INSERT INTO `productos` (`idProducto`, `Nombre`, `Cantidad`, `Categoria`, `Preci
 (13, 'Milanesa Napolitana', 100, 'ALIMENTO', 2000, 1),
 (14, 'Milanesa con Pure', 100, 'ALIMENTO', 2000, 1),
 (15, 'Milanesa con Papas Fritas', 100, 'ALIMENTO', 2500, 1),
-(16, 'Choripan', 10, 'ALIMENTO', 1500, 1);
+(16, 'Choripan', 10, 'ALIMENTO', 1500, 1),
+(17, 'Empanada de Pollo', 100, 'ALIMENTO', 600, 1),
+(18, '7Up 500ml', 500, 'BEBIDA', 800, 1);
 
 -- --------------------------------------------------------
 
@@ -335,13 +367,13 @@ ALTER TABLE `detallemesas`
 -- AUTO_INCREMENT de la tabla `detallepedidos`
 --
 ALTER TABLE `detallepedidos`
-  MODIFY `idDetallePedido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=162;
+  MODIFY `idDetallePedido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=188;
 
 --
 -- AUTO_INCREMENT de la tabla `mesas`
 --
 ALTER TABLE `mesas`
-  MODIFY `idMesa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `idMesa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT de la tabla `meseros`
@@ -353,13 +385,13 @@ ALTER TABLE `meseros`
 -- AUTO_INCREMENT de la tabla `pedidos`
 --
 ALTER TABLE `pedidos`
-  MODIFY `idPedido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=117;
+  MODIFY `idPedido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=126;
 
 --
 -- AUTO_INCREMENT de la tabla `productos`
 --
 ALTER TABLE `productos`
-  MODIFY `idProducto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `idProducto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT de la tabla `reservas`
