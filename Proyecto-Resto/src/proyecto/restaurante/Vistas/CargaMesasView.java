@@ -341,7 +341,9 @@ public class CargaMesasView extends javax.swing.JInternalFrame {
             int capacidad=Integer.parseInt(String.valueOf(jtTablaListaMesa.getValueAt(fila,1)));
             m = mesaData.obtenerMesa(idMesa);
             m.setCapacidad(capacidad);
-            mesaData.modificarMesa(m);
+            //m.setEstado(Estado.OCUPADA);
+            
+            mesaData.modificarCapacidadMesa(m);
             
             //mesaData.modificarCapacidadMesa(idMesa,capacidad);
         }else{
