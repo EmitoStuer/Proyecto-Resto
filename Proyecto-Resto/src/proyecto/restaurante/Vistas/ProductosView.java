@@ -110,15 +110,23 @@ public final class ProductosView extends javax.swing.JInternalFrame {
    
     
     private void armarCabecera(){ 
-        modelo.addColumn("Detalle Nº");
+        modelo.addColumn("Detalle");
         modelo.addColumn("Cantidad");
         modelo.addColumn("Producto");
         modelo.addColumn("Precio");
         modelo.addColumn("Total");
         jtPedidos.setModel(modelo);
+        acomodarTabla();
 
     }
     
+     private void acomodarTabla(){
+        jtPedidos.getColumnModel().getColumn(0).setPreferredWidth(30); // Ajustar el ancho de la segunda columna
+        jtPedidos.getColumnModel().getColumn(1).setPreferredWidth(40);
+        jtPedidos.getColumnModel().getColumn(2).setPreferredWidth(170);
+        jtPedidos.getColumnModel().getColumn(3).setPreferredWidth(40);
+    }
+     
      private void borrarFilas(){
         int f = jtPedidos.getRowCount()-1;
         for(;f >= 0; f--){

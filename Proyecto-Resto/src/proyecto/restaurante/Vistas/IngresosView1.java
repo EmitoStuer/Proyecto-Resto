@@ -240,7 +240,29 @@ public class IngresosView1 extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jlCerrarMouseClicked
 
     private void jcbMeserosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jcbMeserosMouseClicked
-        try{
+//        try{
+//            //desactivarListenersFechas();
+//            
+//
+//            if (!jcbMeseros.isEnabled() && !jcbFechas.isEnabled()) {
+//                borrarFila();
+//                jcbMeseros.setEnabled(true);
+//                cargarComboMeseros();
+//                //activarListenersMeseros();
+//
+//            } else if (!jcbMeseros.isEnabled() && jcbFechas.isEnabled()) {
+//                borrarFila();
+//                jcbFechas.removeAllItems();
+//                jcbFechas.setEnabled(false);
+//                jcbMeseros.setEnabled(true);
+//                jcbMeseros.removeAllItems();
+//                cargarComboMeseros();
+//                //activarListenersMeseros();
+//            }
+//            jcbActividad.setEnabled(false);
+//            jcbActividad.removeAllItems();
+//        }catch(NumberFormatException | NullPointerException e){}
+try{
             //desactivarListenersFechas();
             jcbActividad.setEnabled(false);
             jcbActividad.removeAllItems();
@@ -279,7 +301,25 @@ public class IngresosView1 extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jbListarTodoActionPerformed
 
     private void jcbMeserosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcbMeserosActionPerformed
-        try{    
+//        try{    
+//            if (jcbMeseros.isEnabled() && !jcbFechas.isEnabled()) {
+//                borrarFila();
+//                Mesero mesero = (Mesero) jcbMeseros.getSelectedItem();
+//                if (mesero!=null){
+//                    cargarTabla(mesero);
+//                    sumarTotal();
+//                }else{
+//                    jcbFechas.setEnabled(false);
+//                    jcbFechas.removeAllItems();
+//                }
+//            } else {
+//                jcbMeseros.setEnabled(false); // Desactivar el JComboBox de meseros
+//                jcbFechas.setEnabled(true); // Activar el JComboBox de fechas
+//                jcbFechas.removeAllItems(); // Vaciar el JComboBox de fechas
+//                cargarComboFechas(); // Cargar las fechas en el JComboBox
+//            }
+//        }catch(NumberFormatException | NullPointerException e){}
+try{    
             if (jcbMeseros.isEnabled() && !jcbFechas.isEnabled()) {
                 borrarFila();
                 Mesero mesero = (Mesero) jcbMeseros.getSelectedItem();
@@ -301,7 +341,60 @@ public class IngresosView1 extends javax.swing.JInternalFrame {
 
     private void jcbFechasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jcbFechasMouseClicked
         
-        try{
+//        try{
+//            jcbActividad.setEnabled(false);
+//            jcbActividad.removeAllItems();
+//        if (!jcbFechas.isEnabled() && !jcbMeseros.isEnabled() && !jcbActividad.isEnabled()) {
+//            
+//            jcbFechas.setEnabled(true);
+//                
+//            cargarComboFechas();
+//            //activarListenersFechas();
+//                DateTimeFormatter forma = DateTimeFormatter.ofPattern("dd/MM/yy");
+//                fechaSeleccionada = LocalDate.parse(jcbFechas.getSelectedItem().toString(), forma);
+//                
+//                if (fechaSeleccionada!=null){
+//                    borrarFila();
+//                    cargarTabla(fechaSeleccionada);
+//                    sumarTotal();
+//                }
+//        } else if (jcbMeseros.isEnabled() && !jcbActividad.isEnabled() && !jcbFechas.isEnabled() || !jcbMeseros.isEnabled() && jcbMeseros.getItemCount()>0 && !jcbFechas.isEnabled() && jcbActividad.isEnabled()) {
+//                System.out.println("Entra?");
+//            jcbFechas.setEnabled(true);
+//            meseroSeleccionado =(Mesero) jcbMeseros.getSelectedItem();
+//            
+//            cargarComboFechas(meseroSeleccionado);
+//            //activarListenersFechas();
+//                DateTimeFormatter forma = DateTimeFormatter.ofPattern("dd/MM/yy");
+//                fechaSeleccionada = LocalDate.parse(jcbFechas.getSelectedItem().toString(), forma);
+//                
+//                borrarFila();
+//                if (meseroSeleccionado!=null && fechaSeleccionada != null){
+//                cargarTabla(meseroSeleccionado,fechaSeleccionada);
+//                sumarTotal();
+//                jcbMeseros.setEnabled(false);
+//
+//
+//                }
+//        }else if (!jcbMeseros.isEnabled() && jcbMeseros.getItemCount()>0 && jcbActividad.isEnabled() && !jcbFechas.isEnabled()){
+//            
+//                meseroSeleccionado =(Mesero) jcbMeseros.getSelectedItem();
+//                
+//                    jcbFechas.setEnabled(true);
+//                    cargarComboFechas(meseroSeleccionado);    
+//                
+//                    DateTimeFormatter forma = DateTimeFormatter.ofPattern("dd/MM/yy");
+//                    fechaSeleccionada = LocalDate.parse(jcbFechas.getSelectedItem().toString(), forma);
+//                    
+//                    if (meseroSeleccionado!= null && fechaSeleccionada!=null){
+//                        cargarTabla(meseroSeleccionado, fechaSeleccionada);
+//                        sumarTotal();
+//                    }
+//                    jcbActividad.removeAllItems();
+//                    jcbActividad.setEnabled(false);
+//            }
+//        }catch(NumberFormatException | NullPointerException e){}
+try{
             jcbActividad.setEnabled(false);
             jcbActividad.removeAllItems();
         if (!jcbFechas.isEnabled() && !jcbMeseros.isEnabled() && !jcbActividad.isEnabled()) {
@@ -355,7 +448,82 @@ public class IngresosView1 extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jcbFechasMouseClicked
 
     private void jcbFechasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcbFechasActionPerformed
-        try{    
+//        try{    
+//            borrarFila();
+//            DateTimeFormatter forma = DateTimeFormatter.ofPattern("dd/MM/yy");
+//            if (!jcbMeseros.isEnabled() && jcbMeseros.getItemCount() == 0 && !jcbActividad.isEnabled()) {
+//                System.out.println("primero");
+//                jcbFechas.setEnabled(true);
+//                fechaSeleccionada = LocalDate.parse(jcbFechas.getSelectedItem().toString(), forma);
+//                if (fechaSeleccionada!=null){
+//                    borrarFila();
+//                    cargarTabla(fechaSeleccionada);
+//                    sumarTotal();
+//                }
+//                
+//            } else if (!jcbMeseros.isEnabled() && jcbMeseros.getItemCount() > 0 && !jcbActividad.isEnabled()) {
+//                meseroSeleccionado = (Mesero) jcbMeseros.getSelectedItem();
+//                System.out.println("2do");
+//                if (meseroSeleccionado!=null){
+//                    jcbFechas.setEnabled(true);
+//                    if (jcbFechas.getItemCount()!=0){
+//                        System.out.println("HOLA"+meseroSeleccionado);
+//                        cargarComboFechas(meseroSeleccionado);
+//                        jcbActividad.removeAllItems();
+//                        cargarComboFechas(meseroSeleccionado);
+//                        fechaSeleccionada = LocalDate.parse(jcbFechas.getSelectedItem().toString(), forma);
+//                        cargarTabla(meseroSeleccionado, fechaSeleccionada);
+//                    }
+//                    borrarFila();
+//                    
+//                    
+//                    if (fechaSeleccionada!=null){
+//                        System.out.println("2"+meseroSeleccionado);
+//                        
+//                        cargarComboFechas(meseroSeleccionado);
+//                        fechaSeleccionada = null;
+//                        fechaSeleccionada = LocalDate.parse(jcbFechas.getSelectedItem().toString(), forma);
+//                        System.out.println(fechaSeleccionada);
+//                    cargarTabla(meseroSeleccionado, fechaSeleccionada);
+//                    
+//                    sumarTotal();
+//                    }
+//                    
+//                }
+//            }else if (!jcbMeseros.isEnabled() && jcbMeseros.getItemCount()>0 && jcbActividad.isEnabled()){
+//                System.out.println(" 3ero");
+//                meseroSeleccionado =(Mesero) jcbMeseros.getSelectedItem();
+//                
+//                    jcbFechas.setEnabled(true);
+//                    cargarComboFechas();    
+//                
+//                    
+//                    fechaSeleccionada = LocalDate.parse(jcbFechas.getSelectedItem().toString(), forma);
+//                    jcbActividad.removeAllItems();
+//                    jcbActividad.setEnabled(false);
+//                    if (meseroSeleccionado!= null && fechaSeleccionada!=null){
+//                        cargarTabla(meseroSeleccionado, fechaSeleccionada);
+//                        sumarTotal();
+//                    }
+//            }        
+//        }catch(NumberFormatException | NullPointerException e){}
+//         
+////        probar
+////        String opcion;
+////        try{
+////            borrarFila();
+////            DateTimeFormatter forma = DateTimeFormatter.ofPattern("dd/MM/yy");
+////            if (jcbMeseros.isEnabled() && !jcbActividad.isEnabled()){
+////                opcion = "MeseroConFecha";
+////            } else if (!jcbMeseros.isEnabled() && jcbMeseros.getItemCount()>0 && jcbActividad.isEnabled()){
+////                opcion = "MeseroConFechaActividad";
+////            } else if (){
+////            
+////            }
+////            
+////             
+////         }catch(NumberFormatException | NullPointerException e){}
+try{    
             borrarFila();
             
             if (!jcbMeseros.isEnabled() && jcbMeseros.getItemCount() == 0 && !jcbActividad.isEnabled()) {
@@ -400,23 +568,62 @@ public class IngresosView1 extends javax.swing.JInternalFrame {
                         sumarTotal();
                     }
             }        
-        }catch(NumberFormatException | NullPointerException e){}    
+        }catch(NumberFormatException | NullPointerException e){}
     }//GEN-LAST:event_jcbFechasActionPerformed
 
     private void jbBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbBorrarActionPerformed
         //desactivarListenersMeseros();
         //desactivarListenersFechas();
+        
+        borrarFila();
+        jcbMeseros.removeAllItems();
+        jcbMeseros.setEnabled(false);
+        
+        jcbFechas.removeAllItems();
+        jcbFechas.setEnabled(false);
+        
         jcbActividad.removeAllItems();
         jcbActividad.setEnabled(false);
-        borrarFila();
-        jcbFechas.removeAllItems();
-        jcbMeseros.removeAllItems();
-        jcbFechas.setEnabled(false);
-        jcbMeseros.setEnabled(false);
+        
     }//GEN-LAST:event_jbBorrarActionPerformed
 
     private void jcbActividadMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jcbActividadMouseClicked
-        try{
+//        try{
+//            if (!jcbMeseros.isEnabled() & jcbMeseros.getItemCount()>0 & jcbFechas.isEnabled()){
+//                if (!jcbActividad.isEnabled()){
+//                    jcbActividad.setEnabled(true);
+//                    cargarComboActividad();
+//                    meseroSeleccionado=(Mesero)jcbMeseros.getSelectedItem();
+//                    DateTimeFormatter forma = DateTimeFormatter.ofPattern("dd/MM/yy");
+//                    fechaSeleccionada = LocalDate.parse(jcbFechas.getSelectedItem().toString(), forma);
+//                }    
+//            }else if(!jcbMeseros.isEnabled() & jcbMeseros.getItemCount()>0 & jcbFechas.isEnabled()){
+//                        if (!jcbActividad.isEnabled()){
+//                            jcbActividad.setEnabled(true);
+//                            cargarComboActividad();
+//                            DateTimeFormatter forma = DateTimeFormatter.ofPattern("dd/MM/yy");
+//                            fechaSeleccionada = LocalDate.parse(jcbFechas.getSelectedItem().toString(), forma);
+//                        }    
+//            }else if (!jcbMeseros.isEnabled() & jcbMeseros.getItemCount()==0 & !jcbFechas.isEnabled()){
+//                        if (!jcbActividad.isEnabled()){
+//                            jcbActividad.setEnabled(true);
+//                            cargarComboActividad();
+//                            actividadSeleccionada = (Actividad)jcbActividad.getSelectedItem();
+//                        }
+//            }else if (jcbMeseros.isEnabled()){
+//                        if (!jcbActividad.isEnabled()){
+//                            meseroSeleccionado = (Mesero) jcbMeseros.getSelectedItem();
+//                            jcbActividad.setEnabled(true);
+//                            jcbMeseros.setEnabled(false);
+//                            cargarComboActividad();
+//                            actividadSeleccionada = (Actividad)jcbActividad.getSelectedItem();
+//                            
+//                            cargarTabla(meseroSeleccionado, actividadSeleccionada);
+//                            
+//                        }
+//            } 
+//        }catch(NumberFormatException | NullPointerException e){}   
+try{
             if (!jcbMeseros.isEnabled() & jcbMeseros.getItemCount()>0 & jcbFechas.isEnabled()){
                 if (!jcbActividad.isEnabled()){
                     jcbActividad.setEnabled(true);
@@ -445,11 +652,53 @@ public class IngresosView1 extends javax.swing.JInternalFrame {
                             actividadSeleccionada = (Actividad)jcbActividad.getSelectedItem();
                         }
             } 
-        }catch(NumberFormatException | NullPointerException e){}    
+        }catch(NumberFormatException | NullPointerException e){}
     }//GEN-LAST:event_jcbActividadMouseClicked
 
     private void jcbActividadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcbActividadActionPerformed
-        try{
+//        try{
+//            if (!jcbMeseros.isEnabled() & jcbMeseros.getItemCount()>0 & jcbFechas.isEnabled() & jcbActividad.isEnabled()){
+//                    actividadSeleccionada = (Actividad) jcbActividad.getSelectedItem();
+//                    meseroSeleccionado=(Mesero)jcbMeseros.getSelectedItem();
+//                    DateTimeFormatter forma = DateTimeFormatter.ofPattern("dd/MM/yy");
+//                    fechaSeleccionada = LocalDate.parse(jcbFechas.getSelectedItem().toString(), forma);
+//                    borrarFila();
+//                    if (meseroSeleccionado!=null && fechaSeleccionada !=null && actividadSeleccionada!=null){
+//                    cargarTabla(meseroSeleccionado,fechaSeleccionada,actividadSeleccionada);
+//                    sumarTotal();
+//                    }
+//            }else if(!jcbMeseros.isEnabled() & jcbMeseros.getItemCount()>0 & jcbFechas.isEnabled()){
+//                        actividadSeleccionada = (Actividad) jcbActividad.getSelectedItem();
+//                        DateTimeFormatter forma = DateTimeFormatter.ofPattern("dd/MM/yy");
+//                        fechaSeleccionada = LocalDate.parse(jcbFechas.getSelectedItem().toString(), forma);
+//                        borrarFila();
+//                        if (fechaSeleccionada !=null && actividadSeleccionada!=null){
+//                        cargarTabla(fechaSeleccionada, actividadSeleccionada);
+//                        sumarTotal();
+//                        }
+//            }else if (!jcbMeseros.isEnabled() & jcbMeseros.getItemCount()==0 & !jcbFechas.isEnabled()){
+//                        actividadSeleccionada = (Actividad) jcbActividad.getSelectedItem();
+//                        borrarFila();
+//                        if (actividadSeleccionada!=null){
+//                        cargarTabla(actividadSeleccionada);
+//                        sumarTotal();
+//                        }
+//                    } else if (!jcbMeseros.isEnabled() && jcbMeseros.getItemCount()>0){
+//                        meseroSeleccionado = (Mesero) jcbMeseros.getSelectedItem();
+//                        borrarFila();
+//                        if (meseroSeleccionado!= null && actividadSeleccionada!=null){
+//                            
+//                            System.out.println(actividadSeleccionada);
+//                        actividadSeleccionada = (Actividad) jcbActividad.getSelectedItem();
+//                        
+//                            System.out.println(actividadSeleccionada);
+//                            cargarTabla(meseroSeleccionado, actividadSeleccionada);
+//                           
+//                        sumarTotal();
+//                        }
+//                    }
+//        }catch(NumberFormatException | NullPointerException e){}
+try{
             if (!jcbMeseros.isEnabled() & jcbMeseros.getItemCount()>0 & jcbFechas.isEnabled() & jcbActividad.isEnabled()){
                     actividadSeleccionada = (Actividad) jcbActividad.getSelectedItem();
                     meseroSeleccionado=(Mesero)jcbMeseros.getSelectedItem();
@@ -485,7 +734,7 @@ public class IngresosView1 extends javax.swing.JInternalFrame {
                         sumarTotal();
                         }
                     }
-        }catch(NumberFormatException | NullPointerException e){}   
+        }catch(NumberFormatException | NullPointerException e){}
     }//GEN-LAST:event_jcbActividadActionPerformed
 
     private void jbVerDetalleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbVerDetalleActionPerformed
@@ -522,7 +771,7 @@ public class IngresosView1 extends javax.swing.JInternalFrame {
     // End of variables declaration//GEN-END:variables
 
     private void armarCabecera(){
-        modelo.addColumn("Pedido");
+        modelo.addColumn("Nº");
         modelo.addColumn("Mesero");
         modelo.addColumn("Mesa");
         modelo.addColumn("Fecha");
@@ -556,7 +805,7 @@ public class IngresosView1 extends javax.swing.JInternalFrame {
                 String fechaConFormato = pedidos.getFechaPedido().format(forma);
                     modelo.addRow(new Object[]{
                         pedidos.getIdPedido(),
-                        pedidos.getMesero().getIdMesero(),
+                        pedidos.getMesero().getNombre(),
                         pedidos.getMesa().getIdMesa(),
                         fechaConFormato,
                         pedidos.getHoraPedido(),
@@ -607,7 +856,7 @@ public class IngresosView1 extends javax.swing.JInternalFrame {
             String fechaConFormato = pedidos.getFechaPedido().format(forma);
             modelo.addRow(new Object[]{
                 pedidos.getIdPedido(),
-                    pedidos.getMesero().getIdMesero(),
+                    pedidos.getMesero().getNombre(),
                     pedidos.getMesa().getIdMesa(),
                     fechaConFormato,
                     pedidos.getHoraPedido(),
@@ -627,7 +876,7 @@ public class IngresosView1 extends javax.swing.JInternalFrame {
                 String fechaConFormato = pedidos.getFechaPedido().format(forma);
                 modelo.addRow(new Object[]{
                     pedidos.getIdPedido(),
-                        pedidos.getMesero().getIdMesero(),
+                        pedidos.getMesero().getNombre(),
                         pedidos.getMesa().getIdMesa(),
                         fechaConFormato,
                         pedidos.getHoraPedido(),
@@ -652,7 +901,7 @@ public class IngresosView1 extends javax.swing.JInternalFrame {
                 String fechaConFormato = pedidos.getFechaPedido().format(forma);
                 modelo.addRow(new Object[]{
                     pedidos.getIdPedido(),
-                        pedidos.getMesero().getIdMesero(),
+                        pedidos.getMesero().getNombre(),
                         pedidos.getMesa().getIdMesa(),
                         fechaConFormato,
                         pedidos.getHoraPedido(),
@@ -678,7 +927,7 @@ public class IngresosView1 extends javax.swing.JInternalFrame {
                 String fechaConFormato = pedidos.getFechaPedido().format(forma);
                 modelo.addRow(new Object[]{
                     pedidos.getIdPedido(),
-                        pedidos.getMesero().getIdMesero(),
+                        pedidos.getMesero().getNombre(),
                         pedidos.getMesa().getIdMesa(),
                         fechaConFormato,
                         pedidos.getHoraPedido(),
@@ -704,7 +953,7 @@ public class IngresosView1 extends javax.swing.JInternalFrame {
                 String fechaConFormato = pedidos.getFechaPedido().format(forma);
                 modelo.addRow(new Object[]{
                     pedidos.getIdPedido(),
-                        pedidos.getMesero().getIdMesero(),
+                        pedidos.getMesero().getNombre(),
                         pedidos.getMesa().getIdMesa(),
                         fechaConFormato,
                         pedidos.getHoraPedido(),
@@ -727,7 +976,7 @@ public class IngresosView1 extends javax.swing.JInternalFrame {
                     String fechaConFormato = pedidos.getFechaPedido().format(forma);
                     modelo.addRow(new Object[]{
                             pedidos.getIdPedido(),
-                            pedidos.getMesero().getIdMesero(),
+                            pedidos.getMesero().getNombre(),
                             pedidos.getMesa().getIdMesa(),
                             fechaConFormato,
                             pedidos.getHoraPedido(),
@@ -751,7 +1000,7 @@ public class IngresosView1 extends javax.swing.JInternalFrame {
             String fechaConFormato = pedidos.getFechaPedido().format(forma);
             modelo.addRow(new Object[]{
                 pedidos.getIdPedido(),
-                    pedidos.getMesero().getIdMesero(),
+                    pedidos.getMesero().getNombre(),
                     pedidos.getMesa().getIdMesa(),
                     fechaConFormato,
                     pedidos.getHoraPedido(),
@@ -777,12 +1026,12 @@ public class IngresosView1 extends javax.swing.JInternalFrame {
     }
     
     private void acomodarTabla(){
-        jtListaDetalles.getColumnModel().getColumn(0).setPreferredWidth(40); // Ajustar el ancho de la segunda columna
-        jtListaDetalles.getColumnModel().getColumn(1).setPreferredWidth(40);
-        jtListaDetalles.getColumnModel().getColumn(2).setPreferredWidth(30);
-        jtListaDetalles.getColumnModel().getColumn(3).setPreferredWidth(60);
-        jtListaDetalles.getColumnModel().getColumn(4).setPreferredWidth(60);
-        jtListaDetalles.getColumnModel().getColumn(5).setPreferredWidth(60);
+        jtListaDetalles.getColumnModel().getColumn(0).setPreferredWidth(20); // Ajustar el ancho de la segunda columna
+        jtListaDetalles.getColumnModel().getColumn(1).setPreferredWidth(103);
+        jtListaDetalles.getColumnModel().getColumn(2).setPreferredWidth(25);
+        jtListaDetalles.getColumnModel().getColumn(3).setPreferredWidth(56);
+        jtListaDetalles.getColumnModel().getColumn(4).setPreferredWidth(52);
+        jtListaDetalles.getColumnModel().getColumn(5).setPreferredWidth(43);
     }
     
      private void borrarFila(){
@@ -811,6 +1060,18 @@ public class IngresosView1 extends javax.swing.JInternalFrame {
      }
      
      private void desactivarListenersFechas(){
+         for (ActionListener listener : listenersFechas) {
+             jcbFechas.removeActionListener(listener);
+            }
+     }
+     
+     private void activarListenersActividad(){
+         for (ActionListener listener : listenersFechas) {
+             jcbFechas.addActionListener(listener);
+            }
+     }
+     
+     private void desactivarListenersActividad(){
          for (ActionListener listener : listenersFechas) {
              jcbFechas.removeActionListener(listener);
             }

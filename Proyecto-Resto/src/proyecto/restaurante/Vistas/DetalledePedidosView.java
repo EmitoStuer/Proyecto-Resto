@@ -76,14 +76,14 @@ public final class DetalledePedidosView extends javax.swing.JInternalFrame {
     }
    
     private void acomodarTabla(){
-        jtPedidos.getColumnModel().getColumn(0).setPreferredWidth(35); // Ajustar el ancho de la segunda columna
-        jtPedidos.getColumnModel().getColumn(1).setPreferredWidth(35);
+        jtPedidos.getColumnModel().getColumn(0).setPreferredWidth(40); // Ajustar el ancho de la segunda columna
+        jtPedidos.getColumnModel().getColumn(1).setPreferredWidth(40);
+        jtPedidos.getColumnModel().getColumn(2).setPreferredWidth(130);
         jtPedidos.getColumnModel().getColumn(3).setPreferredWidth(40);
-        jtPedidos.getColumnModel().getColumn(4).setPreferredWidth(40);
     }
     
     private void armarCabecera(){ 
-        modelo.addColumn("Detalle Nº");
+        modelo.addColumn("Detalle");
         modelo.addColumn("Cantidad");
         modelo.addColumn("Producto");
         modelo.addColumn("Precio");

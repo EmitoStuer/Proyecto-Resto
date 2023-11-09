@@ -171,7 +171,7 @@ public class PedidoData {
     
     public List<Pedido> listarTodosLosPedidos(){
         List<Pedido> listaPedidos= new ArrayList();
-        sql = "SELECT * FROM pedidos WHERE 1";
+        sql = "SELECT * FROM pedidos WHERE 1 ORDER BY FechaPedido DESC";
         try {
             ps = con.prepareStatement(sql);
             ps.setBoolean(1,false);

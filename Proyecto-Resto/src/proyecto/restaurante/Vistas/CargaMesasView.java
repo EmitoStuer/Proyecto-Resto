@@ -388,6 +388,7 @@ public class CargaMesasView extends javax.swing.JInternalFrame {
             jrbMesasInactivas.setEnabled(true);
             jbActivar.setEnabled(false);
             jbDesactivar.setEnabled(true);
+            jtCapacidad.requestDefaultFocus();
         }else{
             JOptionPane.showMessageDialog(this,"Debe seleccionar una mesa");
         }
@@ -412,6 +413,7 @@ public class CargaMesasView extends javax.swing.JInternalFrame {
                 jrbMesasInactivas.setEnabled(false);
                 jbDesactivar.setEnabled(false);
                 jbActivar.setEnabled(true);
+                jtCapacidad.requestDefaultFocus();
             }else{
                 JOptionPane.showMessageDialog(this,"la mesa "+idMesa+" esta OCUPADA");
             }

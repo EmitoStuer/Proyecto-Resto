@@ -104,7 +104,7 @@ public class PedidosView extends javax.swing.JInternalFrame {
             for (Pedido pedidos:listaPedidos){
                 modelo.addRow(new Object[]{
                 pedidos.getIdPedido(),
-                pedidos.getMesa(),                
+                pedidos.getMesa().getIdMesa(),                
                 pedidos.getImporte(),                
                 pedidos.getHoraPedido(),
                 });
@@ -300,7 +300,7 @@ public class PedidosView extends javax.swing.JInternalFrame {
                 
                     modelo.addRow(new Object[]{
                     pedidos.getIdPedido(),
-                    pedidos.getMesa(),                
+                    pedidos.getMesa().getIdMesa(),               
                     pedidos.getImporte(),                
                     pedidos.getHoraPedido(),
                     pedidos.getActividad()
@@ -367,7 +367,7 @@ public class PedidosView extends javax.swing.JInternalFrame {
                 
                     modelo.addRow(new Object[]{
                     pedidos.getIdPedido(),
-                    pedidos.getMesa(),                
+                    pedidos.getMesa().getIdMesa(),               
                     pedidos.getImporte(),                
                     pedidos.getHoraPedido(),
                     pedidos.getActividad()

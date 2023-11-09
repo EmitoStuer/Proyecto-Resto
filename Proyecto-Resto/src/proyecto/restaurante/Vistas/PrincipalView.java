@@ -83,7 +83,7 @@ public class PrincipalView extends javax.swing.JFrame {
         jLabel2.setText("jLabel2");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setUndecorated(true);
+        setTitle("Resto App");
 
         Escritorio.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
